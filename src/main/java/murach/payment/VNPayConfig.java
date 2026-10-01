@@ -1,17 +1,17 @@
 package murach.payment;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
 import javax.servlet.http.HttpServletRequest;
 import java.nio.charset.StandardCharsets;
-import java.util.Random;
+import java.util.*;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 public class VNPayConfig {
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_ReturnUrl = "http://localhost:8080/Cart_VNPay_Sandbox/vnpayReturn";
-    public static String vnp_TmnCode = "70GJWL73";
-    public static String vnp_HashSecret = "THYUEXRHTHZKQTTEJSNKOKCFIWNPWDBD";
+    public static String vnp_ReturnUrl = "https://ten-ung-dung-cua-ban.onrender.com/vnpayReturn"; // Cập nhật domain Render
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
+    public static String vnp_TmnCode = System.getenv("VNPAY_TMN_CODE");
+    public static String vnp_HashSecret = System.getenv("VNPAY_HASH_SECRET");
 
     public static String hmacSHA512(final String key, final String data) {
         try {
