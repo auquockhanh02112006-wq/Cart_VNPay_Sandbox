@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class VNPayConfig {
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_ReturnUrl = "https://ten-ung-dung-cua-ban.onrender.com/vnpayReturn"; // Cập nhật domain Render
+    public static String vnp_ReturnUrl = "https://cart-vnpay-sandbox.onrender.com/vnpayReturn";
     public static String vnp_ApiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
     public static String vnp_TmnCode = System.getenv("VNPAY_TMN_CODE");
     public static String vnp_HashSecret = System.getenv("VNPAY_HASH_SECRET");
